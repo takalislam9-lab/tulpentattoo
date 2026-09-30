@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tulpen Tattoo | Estudio de Tatuajes en Fuenlabrada</title>
+<meta name="description" content="Tulpen Tattoo: tatuajes, microblading y piercing en Fuenlabrada. Máxima higiene y buen ambiente.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#4a9fd8;
+    --ink:#0d0f12;
+    --ink2:#161a1f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:var(--ink);color:#fff;overflow-x:hidden;}
+  a{text-decoration:none;color:inherit;}
+  h1,h2,h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.5px;}
+  img{max-width:100%;display:block;}
+
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:20px 6%;background:rgba(13,15,18,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .logo{font-family:'Anton',sans-serif;font-size:1.4rem;letter-spacing:1px;}
+  .logo span{color:var(--blue);}
+  nav ul{list-style:none;display:flex;gap:30px;}
+  nav a{font-size:.82rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#ccc;}
+  .nav-toggle{display:none;font-size:1.6rem;background:none;border:none;color:#fff;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;
+    padding:14px 30px;font-weight:700;font-size:.82rem;letter-spacing:1px;text-transform:uppercase;
+    box-shadow:0 14px 30px -10px rgba(74,159,216,.5);transition:transform .25s;
+  }
+  .btn:hover{transform:translateY(-3px);}
+  .btn-outline{background:transparent;border:1.5px solid #fff;}
+
+  .hero{
+    min-height:100vh;display:flex;align-items:center;padding:150px 6% 90px;
+    background:linear-gradient(rgba(13,15,18,.6),rgba(13,15,18,.88)),url('tulpen1.jpg') center 30%/cover no-repeat;
+  }
+  .hero-inner{max-width:720px;}
+  .eyebrow{display:inline-block;border:1px solid var(--blue);color:var(--blue);text-transform:uppercase;letter-spacing:2px;font-size:.78rem;font-weight:700;padding:8px 18px;margin-bottom:22px;}
+  .hero h1{font-size:clamp(2.6rem,7vw,4.8rem);line-height:1.05;margin-bottom:24px;}
+  .hero h1 span{color:var(--blue);}
+  .hero p{font-size:1.05rem;color:#ccc;max-width:520px;margin-bottom:36px;line-height:1.7;}
+  .hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:56px;}
+  .stats{display:flex;gap:44px;flex-wrap:wrap;}
+  .stat h3{font-size:2.2rem;color:var(--blue);}
+  .stat span{font-size:.78rem;color:#999;text-transform:uppercase;letter-spacing:1px;}
+
+  section{padding:100px 6%;}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 56px;}
+  .section-head .eyebrow{margin-bottom:14px;}
+  .section-head h2{font-size:clamp(1.9rem,4.4vw,2.8rem);}
+  .section-head p{margin-top:14px;color:#999;line-height:1.7;font-weight:300;}
+
+  .services{background:var(--ink2);}
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;max-width:1200px;margin:0 auto;background:rgba(255,255,255,.06);}
+  .service-card{background:var(--ink2);padding:40px 30px;}
+  .service-card .num{font-family:'Anton',sans-serif;font-size:1.6rem;color:var(--blue);margin-bottom:14px;}
+  .service-card h3{font-size:1.15rem;margin-bottom:10px;letter-spacing:.5px;}
+  .service-card p{font-size:.88rem;color:#999;line-height:1.6;font-weight:300;}
+
+  .gallery{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4px;}
+  .gallery figure{overflow:hidden;position:relative;margin:0;}
+  .gallery img{width:100%;height:500px;object-fit:cover;transition:transform .6s;}
+  .gallery figure:hover img{transform:scale(1.05);}
+
+  .why{background:var(--ink2);}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2px;max-width:1100px;margin:0 auto;background:rgba(255,255,255,.06);}
+  .why-card{background:var(--ink2);padding:40px 28px;text-align:center;}
+  .why-card .icon{width:56px;height:56px;border:2px solid var(--blue);border-radius:50%;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;color:var(--blue);}
+  .why-card h3{font-size:1rem;margin-bottom:10px;letter-spacing:.5px;}
+  .why-card p{font-size:.85rem;color:#999;line-height:1.6;font-weight:300;}
+
+  .reviews{text-align:center;}
+  .review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px;max-width:1100px;margin:0 auto;}
+  .review-card{background:var(--ink2);border:1px solid rgba(255,255,255,.08);padding:34px 28px;text-align:left;}
+  .review-card .stars{color:var(--blue);letter-spacing:2px;margin-bottom:14px;}
+  .review-card p{font-weight:300;line-height:1.7;font-style:italic;color:#ddd;font-size:.94rem;margin-bottom:14px;}
+  .review-card cite{font-size:.8rem;color:#999;font-style:normal;text-transform:uppercase;letter-spacing:.5px;}
+
+  .contact{background:var(--ink2);}
+  .contact-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+  .contact-info h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:24px;}
+  .contact-line{display:flex;align-items:center;gap:14px;margin-bottom:18px;color:#ccc;font-size:.98rem;}
+  .contact-line svg{flex-shrink:0;color:var(--blue);}
+  .contact-map{overflow:hidden;height:340px;border:1px solid rgba(255,255,255,.1);}
+  .contact-map iframe{width:100%;height:100%;border:0;filter:grayscale(60%) invert(92%) contrast(90%);display:block;}
+
+  footer{background:var(--ink);color:#777;text-align:center;padding:34px 6%;font-size:.85rem;border-top:1px solid rgba(255,255,255,.06);}
+  footer span{color:var(--blue);}
+
+  .wa-fab{
+    position:fixed;bottom:26px;right:26px;z-index:200;width:62px;height:62px;border-radius:50%;
+    background:#25D366;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 28px rgba(37,211,102,.5);animation:pulse 2.4s infinite;
+  }
+  @keyframes pulse{0%{box-shadow:0 10px 28px rgba(37,211,102,.5);}50%{box-shadow:0 10px 28px rgba(37,211,102,.5), 0 0 0 12px rgba(37,211,102,.15);}100%{box-shadow:0 10px 28px rgba(37,211,102,.5);}}
+
+  @media(max-width:900px){
+    .gallery{grid-template-columns:1fr;}
+    .gallery img{height:360px;}
+    .contact-wrap{grid-template-columns:1fr;}
+    .contact-line{justify-content:center;}
+    nav{position:fixed;top:0;right:0;height:100vh;width:78%;max-width:300px;background:var(--ink2);
+      flex-direction:column;padding:100px 40px;transform:translateX(100%);transition:transform .4s;}
+    nav.open{transform:translateX(0);}
+    nav ul{flex-direction:column;gap:26px;}
+    .nav-toggle{display:block;}
+    section{padding:80px 6%;}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <a href="#" class="logo">TULPEN<span>TATTOO</span></a>
+  <nav id="nav">
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#galeria">Estudio</a></li>
+      <li><a href="#opiniones">Opiniones</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+  <button class="nav-toggle" id="navToggle">☰</button>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+    <span class="eyebrow">Fuenlabrada · Estudio de tatuajes</span>
+    <h1>Arte que llevas<br><span>puesto para siempre</span></h1>
+    <p>Tatuajes, microblading y piercing en Fuenlabrada, en un ambiente tranquilo y con un equipo que cuida cada detalle de tu experiencia.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/34642216981?text=Hola%2C%20quiero%20pedir%20cita%20en%20Tulpen%20Tattoo" class="btn" target="_blank" rel="noopener">Pide tu cita</a>
+      <a href="#galeria" class="btn btn-outline">Ver estudio</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><h3>4,9★</h3><span>Valoración Google</span></div>
+      <div class="stat"><h3>88</h3><span>Reseñas reales</span></div>
+      <div class="stat"><h3>100%</h3><span>Máxima higiene</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servicios">
+  <div class="section-head">
+    <span class="eyebrow">Qué hacemos</span>
+    <h2>Nuestro trabajo</h2>
+    <p>De la idea al diseño final, trabajamos contigo cada detalle para conseguir el resultado que tienes en mente.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="num">01</div>
+      <h3>Tatuajes de autor</h3>
+      <p>Diseños personalizados de realismo, color y línea fina.</p>
+    </div>
+    <div class="service-card">
+      <div class="num">02</div>
+      <h3>Microblading de cejas</h3>
+      <p>Diseño natural y duradero, tratado con mucha paciencia.</p>
+    </div>
+    <div class="service-card">
+      <div class="num">03</div>
+      <h3>Cobertura</h3>
+      <p>Transformamos tatuajes antiguos en nuevas piezas.</p>
+    </div>
+    <div class="service-card">
+      <div class="num">04</div>
+      <h3>Primera vez</h3>
+      <p>Te acompañamos con calma si es tu primer tatuaje.</p>
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="section-head">
+    <span class="eyebrow">Nuestro estudio</span>
+    <h2>Un espacio pensado para ti</h2>
+    <p>Un estudio en Fuenlabrada donde el buen ambiente y el detalle se cuidan al máximo en cada sesión.</p>
+  </div>
+  <div class="gallery">
+    <figure><img src="tulpen1.jpg" alt="Fachada de Tulpen Tattoo en Fuenlabrada"></figure>
+    <figure><img src="tulpen2.jpg" alt="Interior del estudio Tulpen Tattoo con cuadros de tatuajes"></figure>
+  </div>
+</section>
+
+<section class="why">
+  <div class="section-head">
+    <span class="eyebrow">Por qué elegirnos</span>
+    <h2>Confianza y detalle</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+      <h3>Máxima higiene</h3>
+      <p>Cuidamos la limpieza al 100% en cada sesión, sin excepciones.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
+      <h3>Buen ambiente</h3>
+      <p>Un lugar tranquilo para relajarte mientras trabajamos.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+      <h3>Muy valorado</h3>
+      <p>4,9 sobre 5 en Google, con más de 85 reseñas reales.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <h3>En Fuenlabrada</h3>
+      <p>Dentro del Centro Comercial Fuenlabrada 2, fácil acceso.</p>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="opiniones">
+  <div class="section-head">
+    <span class="eyebrow">Opiniones</span>
+    <h2>Lo que dicen nuestros clientes</h2>
+  </div>
+  <div class="review-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Llevo casi dos años tatuándome con Diego y no puedo estar más contenta. Hace poco se cambió a Tulpen Tattoo y la verdad es que el sitio ha sido un salto."</p>
+      <cite>Maria Vorstman</cite>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Me hice el microblading con Daiana, que no puede ser más especial. Es amable, atenta y con mucha paciencia. Siempre dispuesta a ayudarte."</p>
+      <cite>Esther Ortega</cite>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"No he podido quedar más encantada. Confío 100% en ella, es muy cuidadosa, te aconseja y el trato es excelente."</p>
+      <cite>Rosa Yuncal</cite>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <h2>Pide tu cita</h2>
+      <div class="contact-line">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        C. de Portugal, 33, Loc 418 bis, Fuenlabrada, Madrid
+      </div>
+      <div class="contact-line">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        642 21 69 81
+      </div>
+      <div class="contact-line">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        4,9 sobre 5 · 88 reseñas en Google
+      </div>
+      <a href="https://wa.me/34642216981?text=Hola%2C%20quiero%20pedir%20cita%20en%20Tulpen%20Tattoo" class="btn" target="_blank" rel="noopener" style="margin-top:14px;">Escribir por WhatsApp</a>
+    </div>
+    <div class="contact-map">
+      <iframe src="https://www.google.com/maps?q=Tulpen+Tattoo+C.+de+Portugal+33+Fuenlabrada&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 <span>Tulpen Tattoo</span> — Fuenlabrada, Madrid
+</footer>
+
+<a class="wa-fab" href="https://wa.me/34642216981?text=Hola%2C%20quiero%20pedir%20cita%20en%20Tulpen%20Tattoo" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 32 32" fill="white"><path d="M16.001 3C9.373 3 4 8.373 4 15.001c0 2.386.702 4.605 1.912 6.472L4 29l7.727-1.878A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.629 28 15.001 28 8.373 22.629 3 16.001 3zm0 21.818a9.77 9.77 0 0 1-4.98-1.363l-.357-.212-4.583 1.114 1.15-4.47-.232-.367a9.8 9.8 0 0 1-1.5-5.219c0-5.421 4.412-9.833 9.833-9.833s9.833 4.412 9.833 9.833-4.412 9.833-9.833 9.833zm5.38-7.36c-.294-.148-1.741-.859-2.011-.957-.27-.098-.467-.148-.663.148-.196.294-.76.957-.932 1.153-.172.196-.343.221-.637.074-.294-.148-1.242-.458-2.366-1.462-.874-.78-1.464-1.744-1.636-2.038-.172-.294-.018-.453.13-.6.133-.133.294-.343.441-.515.147-.172.196-.294.294-.49.098-.196.049-.368-.025-.515-.074-.148-.663-1.6-.909-2.19-.24-.575-.484-.497-.663-.506l-.564-.01c-.196 0-.515.074-.784.368-.27.294-1.03 1.007-1.03 2.456s1.055 2.85 1.202 3.046c.147.196 2.077 3.17 5.033 4.445.703.303 1.252.484 1.68.619.706.225 1.348.193 1.855.117.566-.085 1.741-.712 1.987-1.4.245-.688.245-1.278.172-1.4-.074-.123-.27-.196-.564-.344z"/></svg>
+</a>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('nav');
+  toggle.addEventListener('click', () => nav.classList.toggle('open'));
+  document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+</script>
+
+</body>
+</html>
